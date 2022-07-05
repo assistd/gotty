@@ -16,6 +16,25 @@ GoTTY is a simple command line tool that turns your CLI tools into web applicati
 ![Screenshot](https://raw.githubusercontent.com/sorenisanerd/gotty/master/screenshot.gif)
 
 # Installation
+## To develop js module in web
+
+1. Run command make
+```
+$ make
+```
+2. Open gotty just builded and config
+```
+$ ./gotty -w -ws-origin 'localhost:9090' sh
+```
+3. Move to js dir and install package
+```
+$ cd js
+$ npm install
+$ npm run start
+```
+4. Open localhost:9090
+
+<hr>
 
 ## From release page
 
