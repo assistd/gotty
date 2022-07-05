@@ -12,11 +12,11 @@ if (elem !== null) {
     var term: Terminal;
     term = new OurXterm(elem);
 
-    const httpsEnabled = window.location.protocol == "https:";
-    const url = (httpsEnabled ? 'wss://' : 'ws://') + window.location.host + window.location.pathname + 'ws';
+    // const httpsEnabled = window.location.protocol == "https:";
+    // const url = (httpsEnabled ? 'wss://' : 'ws://') + window.location.host + window.location.pathname + 'ws';
     const args = window.location.search;
-    const factory = new ConnectionFactory(url, protocols);
-    const wt = new WebTTY(term, factory, args, gotty_auth_token);
+    const factory = new ConnectionFactory('ws://localhost:8080/ws', protocols);
+    const wt = new WebTTY(term, factory, args, '');
     const closer = wt.open();
 
     // According to https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event

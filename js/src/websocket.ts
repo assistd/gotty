@@ -28,6 +28,7 @@ export class Connection {
     };
 
     send(data: string) {
+        console.log('connect send: ', data)
         this.bare.send(data);
     };
 
@@ -47,6 +48,7 @@ export class Connection {
 
     onReceive(callback: (data: string) => void) {
         this.bare.onmessage = (event) => {
+            console.log('connect receive: ', event.data)
             callback(event.data);
         }
     };
